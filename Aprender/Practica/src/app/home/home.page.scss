@@ -1,0 +1,33 @@
+ion-item {
+  position: relative;
+  padding-top: 15px; 
+  --border-radius: 10px;
+  --inner-padding-end: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+ion-label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #a00; 
+  padding: 0 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+ion-input {
+  margin-top: 5px; 
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+}
+
+ion-input:focus {
+  border-color: #e60012;
+  box-shadow: 0 0 5px rgba(230, 0, 18, 0.5);
+}
+

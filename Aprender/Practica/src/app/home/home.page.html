@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <h2>Registro</h2>
+
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Nombre</ion-label>
+        <ion-input type="text" formControlName="first" [ngClass]="{ 'form__inputError': isFullNameRequired }"></ion-input>
+        <ion-note *ngIf="isFullNameRequired" class="form__errorMessage">Este campo no puede estar vacío</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Apellido</ion-label>
+        <ion-input type="text" formControlName="last" [ngClass]="{ 'form__inputError': isFullNameRequired }"></ion-input>
+        <ion-note *ngIf="isFullNameRequired" class="form__errorMessage">Este campo no puede estar vacío</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="mail-outline"></ion-icon> Correo</ion-label>
+        <ion-input type="email" formControlName="email" [ngClass]="{ 'form__inputError': isEmailRequired || isEmailValid }"></ion-input>
+        <ion-note *ngIf="isEmailRequired" class="form__errorMessage">El campo es requerido</ion-note>
+        <ion-note *ngIf="isEmailValid" class="form__errorMessage">El correo es inválido</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="lock-closed-outline"></ion-icon> Contraseña
+        </ion-label>
+        <ion-input
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          [ngClass]="{ 'form__inputError': isPasswordRequired }"
+        >
+        </ion-input>
+        <ion-icon 
+          [name]="showPassword ? 'eye-off-outline' : 'eye-outline'" 
+          slot="end"
+          (click)="togglePasswordVisibility()"
+          style="cursor: pointer;"
+        >
+        </ion-icon>
+        <ion-note *ngIf="isPasswordRequired" class="form__errorMessage">
+          El campo es requerido
+        </ion-note>
+      </ion-item>
+      
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="calendar-outline"></ion-icon> Fecha de Nacimiento</ion-label>
+        <ion-input type="date" formControlName="birthdate"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-button color="success" expand="full" [disabled]="isFormInvalid" type="submit">Guardar</ion-button>
+      </ion-item>
+    </form>
+  </div>
+</ion-content>

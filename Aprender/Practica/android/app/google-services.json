@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1084635790007",
+    "project_id": "ejercitar-c4cb6",
+    "storage_bucket": "ejercitar-c4cb6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084635790007:android:c50ece85a5ace173246b32",
+        "android_client_info": {
+          "package_name": "com.Shadow.DV2.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2rabCiGoXUZn667X2yCw7FjvfjJClASY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
